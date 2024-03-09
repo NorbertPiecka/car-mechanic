@@ -41,3 +41,29 @@ INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, mode
 INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (3, 'Audi Q5 Napęd quatro', 100500, 134000, '2015', 'czarny metalik', 'WAUZZZ9YXCA043789', 2, 3, 2, 'audi2.jpg', 'Nowczosne auto z napędem 4x4 ');
 INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (4, 'Opel Corsa - Po generalnym remoncie', 10000, 400000, '2006', 'srebrny', 'W0LPE9EC7H1048588', 3, 4, 1, 'opel1.jpg', 'Auto przeszło generalny remont w tym ');
 INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (5, 'Opel Astra - Bogata Wersja', 30000, 190000, '2012', 'czarna perła', 'W0L0SDL08E6123893', 2, 5, 1, 'opel2.jpg', 'Najbogatsza wersja dostępna na rynku, posiada ');
+
+INSERT INTO news (id, date, name, description, photo) VALUES (1, '2024-03-09', 'Wiosna nadchodzi!', 'Zmien opony na letnie i skorzystaj z naszej oferty magazynowania opon!','oponyLetnie.jpg');
+INSERT INTO news (id, date, name, description, photo) VALUES (2, '2023-10-19', 'Nie daj zimie się zaskoczyć!', 'Zima tuż tuż! Zmień opony na zimowe już teraz i zgarnij rabatę na czyszczenie auta!','oponyZimowe.jpg');
+INSERT INTO news (id, date, name, description, photo) VALUES (3, '2023-12-06', 'Mikołajkowy przegląd auta!', 'Ho ho ho! Podaruj sobie i bliskim bezpieczną jazdę! Teraz pełny przegląd auta i rabaty na ewnetualne naprawy!','oponyLetnie.jpg');
+
+INSERT INTO offer_cat(id, name) VALUES (1, 'Mechanika');
+INSERT INTO offer_cat(id, name) VALUES (2, 'Elektryka');
+INSERT INTO offer_cat(id, name) VALUES (3, 'Wulkanizacja');
+INSERT INTO offer_cat(id, name) VALUES (4, 'Dodatkowe');
+
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (1, 1, 'Wymiana klocków hamulcowych - przód', 200, '2023-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (2, 1, 'Wymiana klocków hamulcowych - tył', 200, '2023-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (3, 1, 'Wymiana tarcz hamulcowych - przód', 400, '2023-09-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (4, 1, 'Wymiana tarcz hamulcowych - przód', 500, '2023-10-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (5, 1, 'Wymiana filtrów - przód', 300, '2024-02-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (6, 1, 'Wymiana rozrządu - przód', 600, '2024-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (7, 2, 'Sprawdzenie komputerem', 100, '2024-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (8, 2, 'Wyczyszczenie błedów komputera pokładowego', 100, '2024-01-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (9, 2, 'Wymiana oświeltenia LED', 100, '2024-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (10, 2, 'Wymiana i kalibracja czujników parkowania', 500, '2024-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (11, 3, 'Wymiana opon do 19 cali z wyważeniem', 150, '2024-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (12, 3, 'Wymiana opon powyżej 19 cali z wyważeniem', 200, '2024-03-17');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (13, 3, 'Naprawa opony', 40, '2024-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (14, 4, 'Magazyn opon - 2 sezony', 150, '2024-03-09');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (15, 4, 'Oklejenie auta', 1500, '2023-07-07');
+INSERT INTO offer (id, cat_id, name, price, update_date) VALUES (16, 4, 'Polerowanie auta', 700, '2023-07-07');

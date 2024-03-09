@@ -1,23 +1,19 @@
 package pw.norbert.car.mechanic.model;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.sql.Date;
-
 @Entity
-public class News {
+public class Engine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
-    private Date date;
     private String name;
-    private String description;
-    private String photo;
+    private String capacity;
+    private Integer power;
+    private String fuel;
 
     public Integer getId() {
         return id;
@@ -25,14 +21,6 @@ public class News {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public String getName() {
@@ -43,19 +31,27 @@ public class News {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCapacity() {
+        return capacity;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
     }
 
-    public String getPhoto() {
-        return photo;
+    public Integer getPower() {
+        return power;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setPower(Integer power) {
+        this.power = power;
+    }
+
+    public String getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(String fuel) {
+        this.fuel = fuel;
     }
 }
