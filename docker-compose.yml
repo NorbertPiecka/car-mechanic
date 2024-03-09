@@ -1,0 +1,23 @@
+version: '3.7'
+
+networks:
+  car-mechanic:
+
+services:
+  mysql-service:
+    image: mysql
+    container_name: mysql-container
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: mechanic
+      MYSQL_ROOT_PASSWORD: mechanic95
+      MYSQL_USER: mechanic
+      MYSQL_PASSWORD: mechanic95
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/mechanic
+    networks:
+      - car-mechanic
+
