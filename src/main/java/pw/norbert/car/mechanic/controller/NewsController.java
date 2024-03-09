@@ -1,6 +1,8 @@
 package pw.norbert.car.mechanic.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,8 +15,9 @@ import pw.norbert.car.mechanic.repository.NewsRepository;
 import pw.norbert.car.mechanic.repository.OfferCategoryRepository;
 import pw.norbert.car.mechanic.repository.OfferRepository;
 
-@RestController
-@RequestMapping(path="/")
+import java.util.List;
+
+@Controller
 public class NewsController {
     @Autowired
     private NewsRepository newsRepository;
@@ -33,6 +36,13 @@ public class NewsController {
         return offerRepository.findAll();
     }
 
-    @GetMapping(path="/cars")
-    public @ResponseBody Iterable<Car> getAllCars() { return carRepository.findAll();}
+    @RequestMapping("/cars")
+    public String showCars(Model model)
+    {
+        List<Car> cars = (List<Car>) carRepository.findAll();
+        model.addAttribute("cars", cars);
+        return "home";
+    }
+
+
 }
