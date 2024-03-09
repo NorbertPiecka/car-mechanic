@@ -5,10 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import pw.norbert.car.mechanic.model.News;
 import pw.norbert.car.mechanic.repository.NewsRepository;
 
-@Controller
+@RestController
 @RequestMapping(path="/")
 public class NewsController {
     @Autowired
