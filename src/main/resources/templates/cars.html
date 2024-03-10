@@ -12,15 +12,19 @@
     <tr>
         <th>Title</th>
         <th>Author</th>
+        <th>Image</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="nww : ${news}">
-        <td th:text="${nww.name}">Author</td>
-        <td th:text="${nww.date}">Author</td>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.name}">Author</td>
+        <td th:text="${car.model.brand.name}">Author</td>
+        <td><img th:src="@{/car/} + ${car.photo}" alt="Image" width="300" height="200"></td>
     </tr>
     </tbody>
 </table>
-<a href="/cars">Checkout cars for sale!</a>
+<a href="/">
+    Go back to HomePage!
+</a>
 </body>
 </html>

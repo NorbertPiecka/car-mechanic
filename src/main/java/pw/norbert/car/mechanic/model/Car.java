@@ -13,6 +13,8 @@ public class Car {
     private String yearbook;
     private String color;
     private String vin;
+    private String photo;
+    private String description;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "gearbox_id", referencedColumnName = "id")
     private Gearbox gearbox;
@@ -101,5 +103,21 @@ public class Car {
 
     public void setModel(Model model) {
         this.model = model;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

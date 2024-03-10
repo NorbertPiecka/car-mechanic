@@ -1,5 +1,5 @@
 USE mechanic;
-CREATE TABLE news (id INT AUTO_INCREMENT NOT NULL, date DATE NOT NULL, name VARCHAR(50) NOT NULL, description VARCHAR(5000), photo VARCHAR(100), PRIMARY KEY(id));
+CREATE TABLE news (id INT AUTO_INCREMENT NOT NULL, date DATE NOT NULL, name VARCHAR(50) NOT NULL, description VARCHAR(5000), photo VARCHAR(100), photo_alt VARCHAR(200), PRIMARY KEY(id));
 CREATE TABLE offer_cat (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(50) NOT NULL , PRIMARY KEY(id));
 CREATE TABLE offer (id INT AUTO_INCREMENT NOT NULL, cat_id INT NOT NULL, name VARCHAR(50) NOT NULL , price FLOAT NOT NULL , update_date DATE NOT NULL, PRIMARY KEY (id));
 ALTER TABLE offer ADD CONSTRAINT FK_offercatid FOREIGN KEY (cat_id) REFERENCES offer_cat(id);
@@ -10,7 +10,7 @@ CREATE TABLE body (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(50) NOT NULL, PR
 CREATE TABLE model (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(50) NOT NULL , body_id INT NOT NULL, brand_id INT NOT NULL, PRIMARY KEY (id));
 ALTER TABLE model ADD CONSTRAINT FK_bodyid FOREIGN KEY (body_id) REFERENCES body(id);
 ALTER TABLE model ADD CONSTRAINT FK_brandid FOREIGN KEY (brand_id) REFERENCES brand(id);
-CREATE TABLE car (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(200) NOT NULL, price FLOAT NOT NULL , millage INT NOT NULL, yearbook VARCHAR(4) NOT NULL, color VARCHAR(50) NOT NULL, VIN VARCHAR(17) NOT NULL, gearbox_id INT NOT NULL, engine_id INT NOT NULL, model_id INT NOT NULL, photo VARCHAR(200), description VARCHAR(5000), PRIMARY KEY (id));
+CREATE TABLE car (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(200) NOT NULL, price FLOAT NOT NULL , millage INT NOT NULL, yearbook VARCHAR(4) NOT NULL, color VARCHAR(50) NOT NULL, VIN VARCHAR(17) NOT NULL, gearbox_id INT NOT NULL, engine_id INT NOT NULL, model_id INT NOT NULL, photo VARCHAR(200), photo_alt VARCHAR(200), description VARCHAR(5000), PRIMARY KEY (id));
 ALTER TABLE car ADD CONSTRAINT FK_gearboxid FOREIGN KEY (gearbox_id) REFERENCES gearbox(id);
 ALTER TABLE car ADD CONSTRAINT FK_engineid FOREIGN KEY (engine_id) REFERENCES engine(id);
 ALTER TABLE car ADD CONSTRAINT FK_modelid FOREIGN KEY (model_id) REFERENCES model(id);
@@ -36,15 +36,15 @@ INSERT INTO engine (id, name, capacity, power, fuel) VALUES (1, 'AMG', '2996 cm3
 INSERT INTO engine (id, name, capacity, power, fuel) VALUES (2, 'TDI', '1896 cm3', 105, 'Diesel');
 INSERT INTO engine (id, name, capacity, power, fuel) VALUES (3, 'TDI', '1200 cm3', 85, 'Benzyna');
 
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (1, 'Mercedes-Benz GLE 450 AMG 4Matic 9G-TRONIC AMG Line', 195000, 74000, '2016', 'biały', 'WDDSJ4GBXJN610261', 1, 1, 2, 'mercedes.jpg', 'Samochód nowy posiada ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (2, 'Audi A3 8P Polift', 45000, 210000, '2009', 'meteorytowy szary', 'WAUZZZ8KXCA083603', 3, 2, 1, 'audi1.jpg', 'Sprowadzone auto z Niemiec, wymienione zostały ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (3, 'Audi Q5 Napęd quatro', 100500, 134000, '2015', 'czarny metalik', 'WAUZZZ9YXCA043789', 2, 3, 2, 'audi2.jpg', 'Nowczosne auto z napędem 4x4 ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (4, 'Opel Corsa - Po generalnym remoncie', 10000, 400000, '2006', 'srebrny', 'W0LPE9EC7H1048588', 3, 4, 1, 'opel1.jpg', 'Auto przeszło generalny remont w tym ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, description) VALUES (5, 'Opel Astra - Bogata Wersja', 30000, 190000, '2012', 'czarna perła', 'W0L0SDL08E6123893', 2, 5, 1, 'opel2.jpg', 'Najbogatsza wersja dostępna na rynku, posiada ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (1, 'Mercedes-Benz GLE 450 AMG 4Matic 9G-TRONIC AMG Line', 195000, 74000, '2016', 'biały', 'WDDSJ4GBXJN610261', 1, 1, 2, 'mercedes.jpg', 'Zdjecie baiłego, dużego samochdou stojącego na kostce brukowej, na tle drzew', 'Samochód nowy posiada ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (2, 'Audi A3 8P Polift', 45000, 210000, '2009', 'meteorytowy szary', 'WAUZZZ8KXCA083603', 3, 2, 1, 'audi1.jpg', 'Zdjecie szarego samochodu stojącego na śniegu, w tle domy', 'Sprowadzone auto z Niemiec,  wymienione zostały ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (3, 'Audi Q5 Napęd quatro', 100500, 134000, '2015', 'czarny metalik', 'WAUZZZ9YXCA043789', 2, 3, 2, 'audi2.jpg', 'Zdjęcie czarnego dużego samochodu na kostce brukowej','Nowczosne auto z napędem 4x4 ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (4, 'Opel Corsa - Po generalnym remoncie', 10000, 400000, '2006', 'srebrny', 'W0LPE9EC7H1048588', 3, 4, 1, 'opel1.jpg', 'Zdjęcie małego srebrnego samochodu na kostce brukowej', 'Auto przeszło generalny remont w tym ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (5, 'Opel Astra - Bogata Wersja', 30000, 190000, '2012', 'czarna perła', 'W0L0SDL08E6123893', 2, 5, 1, 'opel2.jpg', 'Zdjęcie ciemnego samochodu na tle drzew i domu', 'Najbogatsza wersja dostępna na rynku, posiada ');
 
-INSERT INTO news (id, date, name, description, photo) VALUES (1, '2024-03-09', 'Wiosna nadchodzi!', 'Zmien opony na letnie i skorzystaj z naszej oferty magazynowania opon!','oponyLetnie.jpg');
-INSERT INTO news (id, date, name, description, photo) VALUES (2, '2023-10-19', 'Nie daj zimie się zaskoczyć!', 'Zima tuż tuż! Zmień opony na zimowe już teraz i zgarnij rabatę na czyszczenie auta!','oponyZimowe.jpg');
-INSERT INTO news (id, date, name, description, photo) VALUES (3, '2023-12-06', 'Mikołajkowy przegląd auta!', 'Ho ho ho! Podaruj sobie i bliskim bezpieczną jazdę! Teraz pełny przegląd auta i rabaty na ewnetualne naprawy!','oponyLetnie.jpg');
+INSERT INTO news (id, date, name, description, photo, photo_alt) VALUES (1, '2024-03-09', 'Wiosna nadchodzi!', 'Zmien opony na letnie i skorzystaj z naszej oferty magazynowania opon!','oponyLetnie.jpg', 'Zdjecie opon na asfacie');
+INSERT INTO news (id, date, name, description, photo, photo_alt) VALUES (2, '2023-10-19', 'Nie daj zimie się zaskoczyć!', 'Zima tuż tuż! Zmień opony na zimowe już teraz i zgarnij rabatę na czyszczenie auta!','oponyZimowe.jpg', 'Zdjęcie opon w śniegu');
+INSERT INTO news (id, date, name, description, photo, photo_alt) VALUES (3, '2023-12-06', 'Mikołajkowy przegląd auta!', 'Ho ho ho! Podaruj sobie i bliskim bezpieczną jazdę! Teraz pełny przegląd auta i rabaty na ewnetualne naprawy!','mechnik.jpg', 'Zdjęcie mechanika oglądającego samochód pod maską');
 
 INSERT INTO offer_cat(id, name) VALUES (1, 'Mechanika');
 INSERT INTO offer_cat(id, name) VALUES (2, 'Elektryka');

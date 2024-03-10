@@ -37,12 +37,17 @@ public class NewsController {
     }
 
     @RequestMapping("/cars")
-    public String showCars(Model model)
-    {
+    public String showCars(Model model) {
         List<Car> cars = (List<Car>) carRepository.findAll();
         model.addAttribute("cars", cars);
-        return "home";
+        return "cars";
     }
 
+    @RequestMapping("/")
+    public String showNews(Model model) {
+        List<News> news = (List<News>) newsRepository.findAll();
+        model.addAttribute("news", news);
+        return  "home";
+    }
 
 }
