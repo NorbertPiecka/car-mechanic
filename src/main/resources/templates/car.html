@@ -43,15 +43,12 @@
             <th>Title</th>
             <th>Author</th>
             <th>Image</th>
-            <th>Sprawdź szczegóły!</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="car : ${cars}">
-            <td th:text="${car.name}"><a th:href="@{/car/} + ${car.id}"></a></td>
+            <td th:text="${car.name}">Author</td>
             <td th:text="${car.model.brand.name}">Author</td>
             <td><img th:src="@{/car/} + ${car.photo}" th:alt="${car.photoAlt}" width="300" height="200"></td>
-            <td><a th:href="@{/auto/} + ${car.id}">Sprawdz szczegóły!</a></td>
         </tr>
         </tbody>
     </table>

@@ -14,6 +14,8 @@ public class Car {
     private String color;
     private String vin;
     private String photo;
+    @Column(name = "photo_alt")
+    private String photoAlt;
     private String description;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "gearbox_id", referencedColumnName = "id")
@@ -119,5 +121,13 @@ public class Car {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPhotoAlt() {
+        return photoAlt;
+    }
+
+    public void setPhotoAlt(String photoAlt) {
+        this.photoAlt = photoAlt;
     }
 }

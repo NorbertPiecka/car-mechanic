@@ -1,10 +1,7 @@
 package pw.norbert.car.mechanic.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Date;
 
@@ -18,6 +15,8 @@ public class News {
     private String name;
     private String description;
     private String photo;
+    @Column(name = "photo_alt")
+    private String photoAlt;
 
     public Integer getId() {
         return id;
@@ -57,5 +56,13 @@ public class News {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getPhotoAlt() {
+        return photoAlt;
+    }
+
+    public void setPhotoAlt(String photoAlt) {
+        this.photoAlt = photoAlt;
     }
 }

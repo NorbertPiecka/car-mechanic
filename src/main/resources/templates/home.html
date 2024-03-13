@@ -47,6 +47,7 @@
         <tr th:each="nww : ${news}">
             <td th:text="${nww.name}">Author</td>
             <td th:text="${nww.date}">Author</td>
+            <td><a th:href="@{/news/} + ${nww.id}">Sprawdz szczegóły!</a></td>
         </tr>
         </tbody>
     </table>

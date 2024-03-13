@@ -35,34 +35,23 @@
         </ul>
     </div>
 </nav>
-<div class="cars-div p-2">
-    <h1>List of Books</h1>
+<div>
     <table>
         <thead>
         <tr>
             <th>Title</th>
             <th>Author</th>
-            <th>Image</th>
-            <th>Sprawdź szczegóły!</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="car : ${cars}">
-            <td th:text="${car.name}"><a th:href="@{/car/} + ${car.id}"></a></td>
-            <td th:text="${car.model.brand.name}">Author</td>
-            <td><img th:src="@{/car/} + ${car.photo}" th:alt="${car.photoAlt}" width="300" height="200"></td>
-            <td><a th:href="@{/auto/} + ${car.id}">Sprawdz szczegóły!</a></td>
-        </tr>
+            <td th:text="${news.name}">Author</td>
+            <td th:text="${news.date}">Author</td>
         </tbody>
     </table>
-    <a href="/">
-        Go back to HomePage!
-    </a>
+    <a href="/cars">Checkout cars for sale!</a>
 </div>
-<footer class="bg-body-tertiary text-center text-lg-start">
+<footer class="bg-body-tertiary text-center text-lg-start fixed-bottom">
     <div class="text-center p-3" id="footer">
         @2024 | Norbert Piecka | Ośrodek kształcenia na odległość
     </div>
 </footer>
-</body>
-</html>
