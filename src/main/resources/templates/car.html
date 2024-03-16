@@ -39,8 +39,7 @@
 </nav>
 <div class="content-wrap">
     <div class="d-flex flex-column justify-content-center align-items-center">
-        <img class="p-2 m-2 detail-auto-image" th:src="@{/car_image/} + ${car.photo}" th:alt="${car.photoAlt}"
-             width="300" height="200">
+        <img class="p-2 m-2 detail-auto-image" th:src="@{/car_image/} + ${car.photo}" th:alt="${car.photoAlt}">
         <h3 th:text="${car.name}"></h3>
         <hr class="solid">
     </div>
