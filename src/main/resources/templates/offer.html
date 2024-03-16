@@ -36,15 +36,96 @@
     </div>
 </nav>
 <div>
-    <div>
-        <h1 class="text-center">Poniżej znjadziesz nasze standardowe usługi, jeśli jednak masz inny problem nie wachaj się i zadzwoń, a my przygotujemy wycenę!</h1>
-        <a href="/kontakt">KONTAKT</a>
-        <h5 class="text-center">Cennik został zaktualizaowany: <span th:text="${offerDate}"></span></h5>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-3 pt-2">
+        <h3 class="text-center fw-bold">Poniżej znjadziesz nasze standardowe usługi! </h3>
+        <h3 class="text-center fw-light">Jeśli jednak masz inny problem nie wachaj się i zadzwoń, a my przygotujemy
+            wycenę!</h3>
+        <a class="btn btn-warning p-2 m-1" href="/kontakt">KONTAKT</a>
     </div>
-    <div>
-        <p>Wulkanizacja itd</p>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <hr class="solid">
+        <h3 class="text-center">Mechanika Samochodowa:</h3>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Nazwa usługi</th>
+                    <th scope="col">Cena (zł)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="mech: ${mechOffer}">
+                    <td th:text="${mech.getName()}"></td>
+                    <td th:text="${mech.getPrice().intValue()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <hr class="solid">
+        <h3 class="text-center">Elektryka Samochodowa:</h3>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Nazwa usługi</th>
+                    <th scope="col">Cena (zł)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ele: ${eleOffer}">
+                    <td th:text="${ele.getName()}"></td>
+                    <td th:text="${ele.getPrice().intValue()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <hr class="solid">
+        <h3 class="text-center">Wulkanizacja:</h3>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Nazwa usługi</th>
+                    <th scope="col">Cena (zł)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="wul: ${wulOffer}">
+                    <td th:text="${wul.getName()}"></td>
+                    <td th:text="${wul.getPrice().intValue()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <hr class="solid">
+        <h3 class="text-center">Usługi dodatkowe:</h3>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Nazwa usługi</th>
+                    <th scope="col">Cena (zł)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="dod: ${dodOffer}">
+                    <td th:text="${dod.getName()}"></td>
+                    <td th:text="${dod.getPrice().intValue()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <hr class="solid">
+        <h3 class="text-center fw-light">Gwarantujemy profesjonalną obsługę i przyziemne ceny! ;)</h3>
+        <h5 class="text-center m-2 p-2">Cennik został zaktualizaowany: <span th:text="${offerDate}"></span></h5>
     </div>
 </div>
 <footer class="bg-body-tertiary text-center text-lg-start">
