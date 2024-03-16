@@ -4,9 +4,18 @@ networks:
   car-mechanic:
 
 services:
+  mechanic:
+    container_name: mechanic
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - car-mechanic
   mysql-service:
     image: mysql
-    container_name: mysql-container
+    container_name: mysql
     restart: always
     command: --default-authentication-plugin=mysql_native_password
     environment:
