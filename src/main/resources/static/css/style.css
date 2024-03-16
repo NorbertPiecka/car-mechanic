@@ -33,6 +33,16 @@
     max-width: 30%;
     max-height: 30%;
 }
+
+.news-image {
+    max-width: 30%;
+    max-height: 30%;
+}
+
+.news-text {
+    max-width: 40%;
+}
+
 .auto-card {
     background-color: #EEEEEE;
     max-width: 70%;

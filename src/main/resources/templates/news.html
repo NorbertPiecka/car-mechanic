@@ -35,22 +35,16 @@
         </ul>
     </div>
 </nav>
-<div>
-    <table>
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-        </tr>
-        </thead>
-        <tbody>
-            <td th:text="${news.name}">Author</td>
-            <td th:text="${news.date}">Author</td>
-        </tbody>
-    </table>
-    <a href="/cars">Checkout cars for sale!</a>
+<div class="d-flex flex-column justify-content-center align-items-center m-3 p-2">
+    <h3 class="text-center fw-bold" th:text="${news.name}"></h3>
+    <p th:text="${news.date}"></p>
+    <img class="news-image rounded" th:src="@{/news_image/} + ${news.photo}" th:alt="${news.photoAlt}">
+    <p class="news-text p-1 m-1" th:text="${news.description} + ${loremIpsum}"></p>
+    <hr class="hr-yellow">
+    <h4>Czekamy na Twój telefon! ;)</h4>
+    <a class="btn btn-warning p-2 m-1" href="/kontakt">KONTAKT</a>
 </div>
-<footer class="bg-body-tertiary text-center text-lg-start fixed-bottom">
+<footer class="bg-body-tertiary text-center text-lg-start">
     <div class="text-center p-3" id="footer">
         @2024 | Norbert Piecka | Ośrodek kształcenia na odległość
     </div>
