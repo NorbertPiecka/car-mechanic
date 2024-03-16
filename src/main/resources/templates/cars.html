@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Serwis Samochodowy - Norbert Piecka 329131">
     <title>Serwis Samochodowy</title>
     <link rel="icon" type="image/png" href="/favicon.png"/>
@@ -52,16 +52,18 @@
                 <div>
                     <table class="wrapper">
                         <thead>
+                        <tr>
                             <th scope="col">Silnik</th>
                             <th scope="col">Paliwo</th>
                             <th scope="col">Przebieg(km)</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="auto-info" th:text="${car.engine.name}"></td>
-                                <td class="auto-info" th:text="${car.engine.fuel}"></td>
-                                <td class="auto-info" th:text="${car.millage}"></td>
-                            </tr>
+                        <tr>
+                            <td class="auto-info" th:text="${car.engine.name}"></td>
+                            <td class="auto-info" th:text="${car.engine.fuel}"></td>
+                            <td class="auto-info" th:text="${car.millage}"></td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
