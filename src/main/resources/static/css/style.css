@@ -29,6 +29,10 @@
     max-height: 50%;
 }
 
+.contact-image {
+    max-width: 30%;
+    max-height: 30%;
+}
 .auto-card {
     background-color: #EEEEEE;
     max-width: 70%;
@@ -56,6 +60,10 @@
     width: 30%;
 }
 
+.element-to-hide {
+    display: none;
+}
+
 #project-container {
     justify-content: flex-end;
 }
@@ -68,4 +76,9 @@
 hr.solid {
     border-top: 3px solid #bbb;
     width: 90%;
+}
+
+.hr-yellow {
+    border-top: 5px solid #ffc107;
+    width: 30%;
 }
