@@ -36,25 +36,78 @@
     </div>
 </nav>
 <div class="content-wrap">
-    <h1>List of Books</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Image</th>
-        </tr>
-        </thead>
-        <tbody>
-            <td th:text="${car.name}">Author</td>
-            <td th:text="${car.model.brand.name}">Author</td>
-            <td><img th:src="@{/car_image/} + ${car.photo}" th:alt="${car.photoAlt}" width="300" height="200"></td>
-        </tr>
-        </tbody>
-    </table>
-    <a href="/">
-        Go back to HomePage!
-    </a>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <img class="p-2 m-2 detail-auto-image" th:src="@{/car_image/} + ${car.photo}" th:alt="${car.photoAlt}"
+             width="300" height="200">
+        <h3 th:text="${car.name}"></h3>
+        <hr class="solid">
+    </div>
+    <div class=" d-flex flex-column justify-content-center align-items-center">
+        <p class="text-center auto-card-text" th:text="${car.description} + ${loremIpsum} + ${loremIpsum}"></p>
+        <hr class="hr-yellow">
+    </div>
+    <div class=" d-flex flex-column justify-content-center align-items-center">
+        <table class="table table-striped table-bordered table-hover car-table">
+            <tbody>
+                <tr>
+                    <td>Marka</td>
+                    <td th:text="${car.model.brand.name}"></td>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td th:text="${car.model.name}"></td>
+                </tr>
+                <tr>
+                    <td>Podwozie</td>
+                    <td th:text="${car.model.body.name}"></td>
+                </tr>
+                <tr>
+                    <td>Silnik</td>
+                    <td th:text="${car.engine.name}"></td>
+                </tr>
+                <tr>
+                    <td>Pojemność silnika</td>
+                    <td th:text="${car.engine.capacity}"></td>
+                </tr>
+                <tr>
+                    <td>Paliwo</td>
+                    <td th:text="${car.engine.fuel}"></td>
+                </tr>
+                <tr>
+                    <td>Rocznik</td>
+                    <td th:text="${car.yearbook}"></td>
+                </tr>
+                <tr>
+                    <td>Skrzynia biegów</td>
+                    <td th:text="${car.gearbox.name}"></td>
+                </tr>
+                <tr>
+                    <td>Przebieg (km)</td>
+                    <td th:text="${car.millage}"></td>
+                </tr>
+                <tr>
+                    <td>Kolor</td>
+                    <td th:text="${car.color}"></td>
+                </tr>
+                <tr>
+                    <td>VIN</td>
+                    <td th:text="${car.vin}"></td>
+                </tr>
+                <tr>
+                    <td>Cena (zł)</td>
+                    <td th:text="${car.price.intValue()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <hr class="hr-yellow">
+        <h4 class="text-center fw-light">Czy to auto jest dla Ciebie?</h4>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <a class="btn btn-warning p-2 m-2" href="/kontakt">TAK JUŻ DZWONIE</a>
+            <a class="btn btn-danger p-2 m-2" href="/auta">SZUKAM CZEGOŚ INNEGO</a>
+        </div>
+    </div>
 </div>
 <footer class="bg-body-tertiary text-center text-lg-start">
     <div class="text-center p-3" id="footer">

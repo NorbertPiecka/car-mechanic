@@ -27,7 +27,7 @@ INSERT INTO gearbox (id, name) VALUES (1, 'Manualna');
 INSERT INTO gearbox (id, name) VALUES (2, 'Automatyczna');
 
 INSERT INTO model(id, name, body_id, brand_id) VALUES (1, 'GLE', 3, 3);
-INSERT INTO model(id, name, body_id, brand_id) VALUES (2, 'A3', 2, 1);
+INSERT INTO model(id, name, body_id, brand_id) VALUES (2, 'A3', 1, 1);
 INSERT INTO model(id, name, body_id, brand_id) VALUES (3, 'Q5', 3, 1);
 INSERT INTO model(id, name, body_id, brand_id) VALUES (4, 'Corsa', 1, 2);
 INSERT INTO model(id, name, body_id, brand_id) VALUES (5, 'Astra', 2, 2);
@@ -36,11 +36,11 @@ INSERT INTO engine (id, name, capacity, power, fuel) VALUES (1, 'AMG', '2996 cm3
 INSERT INTO engine (id, name, capacity, power, fuel) VALUES (2, 'TDI', '1896 cm3', 105, 'Diesel');
 INSERT INTO engine (id, name, capacity, power, fuel) VALUES (3, 'TDI', '1200 cm3', 85, 'Benzyna');
 
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (1, 'Mercedes-Benz GLE 450 AMG 4Matic 9G-TRONIC AMG Line', 195000, 74000, '2016', 'biały', 'WDDSJ4GBXJN610261', 1, 1, 2, 'mercedes.jpg', 'Zdjecie baiłego, dużego samochdou stojącego na kostce brukowej, na tle drzew', 'Samochód nowy posiada ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (2, 'Audi A3 8P Polift', 45000, 210000, '2009', 'meteorytowy szary', 'WAUZZZ8KXCA083603', 3, 2, 1, 'audi1.jpg', 'Zdjecie szarego samochodu stojącego na śniegu, w tle domy', 'Sprowadzone auto z Niemiec,  wymienione zostały ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (3, 'Audi Q5 Napęd quatro', 100500, 134000, '2015', 'czarny metalik', 'WAUZZZ9YXCA043789', 2, 3, 2, 'audi2.jpg', 'Zdjęcie czarnego dużego samochodu na kostce brukowej','Nowczosne auto z napędem 4x4 ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (4, 'Opel Corsa - Po generalnym remoncie', 10000, 400000, '2006', 'srebrny', 'W0LPE9EC7H1048588', 3, 4, 1, 'opel1.jpg', 'Zdjęcie małego srebrnego samochodu na kostce brukowej', 'Auto przeszło generalny remont w tym ');
-INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (5, 'Opel Astra - Bogata Wersja', 30000, 190000, '2012', 'czarna perła', 'W0L0SDL08E6123893', 2, 5, 1, 'opel2.jpg', 'Zdjęcie ciemnego samochodu na tle drzew i domu', 'Najbogatsza wersja dostępna na rynku, posiada ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (1, 'Mercedes-Benz GLE 450 AMG 4Matic 9G-TRONIC AMG Line', 195000, 74000, '2016', 'Biały', 'WDDSJ4GBXJN610261', 1, 1, 2, 'mercedes.jpg', 'Zdjecie baiłego, dużego samochdou stojącego na kostce brukowej, na tle drzew', 'Samochód nowy posiada ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (2, 'Audi A3 8P Polift', 45000, 210000, '2009', 'Meteorytowy szary', 'WAUZZZ8KXCA083603', 2, 2, 1, 'audi1.jpg', 'Zdjecie szarego samochodu stojącego na śniegu, w tle domy', 'Sprowadzone auto z Niemiec,  wymienione zostały ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (3, 'Audi Q5 Napęd quatro', 100500, 134000, '2015', 'Czarny metalik', 'WAUZZZ9YXCA043789', 2, 3, 2, 'audi2.jpg', 'Zdjęcie czarnego dużego samochodu na kostce brukowej','Nowczosne auto z napędem 4x4 ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (4, 'Opel Corsa - Po generalnym remoncie', 10000, 400000, '2006', 'Srebrny', 'W0LPE9EC7H1048588', 3, 4, 1, 'opel1.jpg', 'Zdjęcie małego srebrnego samochodu na kostce brukowej', 'Auto przeszło generalny remont w tym ');
+INSERT INTO car (id, name, price, millage, yearbook, color, VIN, engine_id, model_id, gearbox_id, photo, photo_alt, description) VALUES (5, 'Opel Astra - Bogata Wersja', 30000, 190000, '2012', 'Czarna perła', 'W0L0SDL08E6123893', 2, 5, 1, 'opel2.jpg', 'Zdjęcie ciemnego samochodu na tle drzew i domu', 'Najbogatsza wersja dostępna na rynku, posiada ');
 
 INSERT INTO news (id, date, name, description, photo, photo_alt) VALUES (1, '2024-03-09', 'Wiosna nadchodzi!', 'Zmien opony na letnie i skorzystaj z naszej oferty magazynowania opon!','oponyLetnie.jpg', 'Zdjecie opon na asfacie');
 INSERT INTO news (id, date, name, description, photo, photo_alt) VALUES (2, '2023-10-19', 'Nie daj zimie się zaskoczyć!', 'Zima tuż tuż! Zmień opony na zimowe już teraz i zgarnij rabatę na czyszczenie auta!','oponyZimowe.jpg', 'Zdjęcie opon w śniegu');

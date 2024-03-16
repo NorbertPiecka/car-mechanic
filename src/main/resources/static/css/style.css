@@ -66,6 +66,15 @@
     min-height: 70%;
 }
 
+.detail-auto-image {
+    width: 50%;
+    height: 50%;
+}
+
+.car-table {
+    width: 70%;
+}
+
 .auto-info {
     width: 30%;
 }
