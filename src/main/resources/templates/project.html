@@ -36,7 +36,141 @@
     </div>
 </nav>
 <div class="content-wrap">
+    <div class="d-flex flex-column justify-content-center align-items-center mt-3 pt-2">
+        <h3 class="text-center fw-bold">Użyte technologie</h3>
+        <hr class="hr-yellow">
+        <ul>
+            <li>HTML 5 - Struktura wyświetlanych stron</li>
+            <li>CSS - Stylowanie komponentów</li>
+            <li>Bootstrap 5.3 - Biblioteka komponentów CSS i JavaScript</li>
+            <li>Spring Boot 3.2.3 z JAVA 17 - Strona serwerowa aplikacji</li>
+            <li>Gradle 8.5 - Budowania aplikacji</li>
+            <li>MySQL 8.3 - Jako baza danych</li>
+            <li>Docker/docker-compose - Budowa obrazu w celu wystawienia aplikacji</li>
+            <li>Oracle Cloud z maszyną wirtualną Ubuntu 22.04 - Wystawienie aplikacji</li>
+        </ul>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-3 pt-2">
+        <h3 class="text-center fw-bold">Założenia nawigacji serwisu</h3>
+        <hr class="hr-yellow">
+        <ul class="d-flex flex-column justify-content-center align-items-center">
+            <li class="summary-text">System nawigacji miał być prosty i intuicyjny, dlatego został stworzony dobrze znany z innych stron pasek nawigacyjny
+                u góry strony, pełniący główną rolę nawigacji po serwisie. Na poszczególnych stronach znajdują się również przyciski umożlwiające
+                przechodzenie pomiędzy kolejnymi częściami serwisów.
+            </li>
+            <li class="summary-text">
+                Na główną stronę serwisu możemy przejść kilkając w "Auto Serwis" na pasku nawigacyjnym. Strona ta pozwala na przejście do strony kontaktowej
+                poprzez kliknięcie w przycisk "Umów spotkanie", sprawdzenie najnowszych wiadomości zamieszonych przez właściceli serwisów (Jest również
+                możliwość zobaczenie dłuższej wiadomości po kliknięciu w przycisk "Sprawdź szczegóły")
+                czy przejście do zakładki ze sprzedażą samochodów oferowanych przez serwis.
+            </li>
+            <li class="summary-text">
+                Klikając w zakładke "Oferta" przejdziemy do cennika podstawowych usług pełnionych przez serwisie. Mamy również możlwość przejścia do strony
+                zawierającej dane kontaktowe serwisu. Dane dotyczące cennika przetrzymywane są w bazie danych i wczytywane podczas ładowania strony.
+                Na dole stronie możemy znaleźć informację o najnowszej aktualizacji cennika, która jest generowana na podstawie rekordów w bazie danych.
+            </li>
+            <li class="summary-text">
+                Zakładka "Sprzedaż Aut" zawiera liste aut na sprzedaż wystawionych przez serwis. Możemy uzyskać dokładniejszy opis poprzez wybranie przycisku
+                "Sprawdź szczegóły" obok wybranego auta. Wybranie przycisku "Sprawdź szczegóły" spowoduje wyświetlenie szczegółów dotyczących samochodu. Na dole
+                strony mamy możliwość przejścia do strony z danymi kontakowej "TAK JUŻ DZOWNIE" lub powrót do strony z listą aut poprzez kilknięcie w przycisk
+                "SZUKAM CZEGOŚ INNEGO"
+            </li>
+            <li class="summary-text">
+                Kilkając w "Kontak" na pasku nawigacyjnym zostaniemy przekierowani na stronę zawierającą dane kontakowe serwisu samochodowego oraz godziny otwaracia.
+            </li>
+            <li class="summary-text">
+                Zakładka "O projekcie", czyli aktualna zawiera informację na temat użytych technologi, założeń nawigacji serwisu, a także uzasadniennie spełnionych wymagań.
+            </li>
+        </ul>
 
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-3 pt-2">
+        <h3 class="text-center fw-bold">Spełnione wymagania</h3>
+        <hr class="hr-yellow">
+        <table class="table table-striped table-bordered table-hover car-table">
+            <thead>
+            <tr>
+                <th>Wymaganie</th>
+                <th>Uzasadnienie spełnienia wymagania<!DOCTYPE html></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Serwis może być zrealizowany na bazie HTML 4.01 lub XHTML (dopuszczalne jest też
+                    użycie XML+XSLT). Strony muszą być utworzone poprawnie i mieć poprawne deklaracje
+                    typu – będą przepuszczane przez walidator w ramach testu.</td>
+                <td>Każda z dostępnych w serwisie stron została napisana z użyciem HTML oraz został to zadeklarowane na początku każdej z nich poprzez
+                    zastosoawnie znacznika "DOCTYPE html>"</td>
+            </tr>
+            <tr>
+                <td>Wymagane jest nietrywialne formatowanie przy użyciu CSS. Poprawność reguł CSS również będzie sprawdzana walidatorem.</td>
+                <td>W tym celu skorzystałem z framework Bootstrap dodając również własne stylowania. Dla przykładu na stronie "Sprzedaż Aut"
+                kompenent odpowiedzialny za wyświetlania informacji o samochodach został napisany przeze mnie własnoręcznie.</td>
+            </tr>
+            <tr>
+                <td>Kompatybilność i „łagodna degradacja” - serwis powinien funkcjonować poprawnie i
+                    wyglądać dobrze we wszystkich popularnych przeglądarkach (najnowsze wersje), a
+                    korzystanie z serwisu powinno być też możliwe – choć zapewne nie bez zakłóceń w rodzaju
+                    nieudanego formatowania – w przeglądarkach starszych lub bardziej prymitywnych pod
+                    względem możliwości prezentacyjnych (np. lynx). W przypadku podjęcia decyzji o użyciu
+                    XHTML 1.1 wystarczy obsługa przez przeglądarki respektujące ten standard.</td>
+                <td>Każda ze stron sprawdzana była pod względem reakcji na zwiększaną oraz zmieniejszaną rozdzielczość okna przeglądarki, z racji
+                czego na biężąco poprawiałem stylowanie i upewniałem się, że każdy element będzie wyglądał dobrze bez względu na przeglądarke użytkownika</td>
+            </tr>
+            <tr>
+                <td>Dostępność dla niepełnosprawnych – w szczególności powinna być możliwa nawigacja
+                    przy użyciu oprogramowania czytającego (a zatem wszystkie istotne obrazki powinny mieć
+                    teksty alternatywne, itp.). Oczywiście biorąc pod uwagę skalę projektu nie możemy
+                    przesadzać z rozmachem – np. nie jest wymagane dostarczenie reguł CSS dla medium aural.</td>
+                <td>Każde ze zdjęć posiada przypisany tekst alternatywny. Serwis wyświetla się również w jednym oknie tzn. nie jest potrzebne przewijanie w boki,
+                aby zobaczyć zawartość strony. Strona dopasowuje się do okna przeglądarki.</td>
+            </tr>
+            <tr>
+                <td>Poza (X)HTML i CSS serwis powinien wykorzystywać co najmniej jedną wybraną
+                    technologię spośród przedstawionych na wykładzie (np. skrypty po stronie serwera i/lub
+                    klienta, ciasteczka, bazy danych, web serwisy, SSL... - do wyboru)</td>
+                <td>Do realizacji tego wymagania wykorzystana została baza danych MySQL, przechowująca dane na temat wiadomości/powiadomień wyświetlanych na
+                    stronie głównej, informację na temat oferty serwisu samochodowego, ale także informację na temat samochodów wystawionych na sprzedaż
+                    przez serwis.</td>
+            </tr>
+            <tr>
+                <td>Serwis powinien zawierać dobrze przemyślany, wygodny i spójny system nawigacji. Co
+                    więcej, serwis powinien być na tyle duży, aby ten system miał sens – przypominamy o
+                    możliwości posiłkowania się wszelkiego rodzaju „materiałem zastępczym”.</td>
+                <td>Strona posiada taki system co zostało lepiej opisane w sekcji "Założenia nawigacji serwisu" wyżej na tej stronie.</td>
+            </tr>
+            <tr>
+                <td>Serwis musi zawierać stronę poświęconą opisowi samego serwisu – jakich technologii
+                    użyto, jakie były założenia przy planowaniu nawigacji, oraz dlaczego autor uważa, że strona
+                    spełnia wymagania wymienione w tym dokumencie.</td>
+                <td>Aktualna strona zawiera takie informacje.</td>
+            </tr>
+            <tr>
+                <td>Przypominamy, że projektowany jest serwis internetowy, a więc strona, z której
+                    teoretycznie ktoś miałby korzystać. Nieczytelne zestawienia kolorów, mikroskopijne
+                    czcionki, migające irytująco obrazki itp. nie powinny występować – prosimy utworzyć
+                    stronę, która nie tyle próbuje pochwycić uwagę gościa (choć to pożądane), ile zaoferować
+                    mu wygodny dostęp do poszukiwanych treści.</td>
+                <td>Gamma kolorów została ogarniczona do bieli, czerni, odcieni szarości, żółtego i czerownego, które razem dobrze się komponują i dają
+                wrażenie "czystości" na przeglądanych stronach. Unikałem również dobierania małych czcionek, strałem się w miarę możlwiości operować na większych rozmiarach</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-3 pt-2">
+        <h3 class="text-center fw-bold">Podsumowanie</h3>
+        <hr class="hr-yellow">
+        <p class="summary-text">Strona serwerowa aplikacji została napisana w Javie z użyciem frameworka Spring Boot oraz połączona z bazą danych MySQL.
+            Widoki, czyli strony serwisu zostały napisane z wykorzystaniem HTML i CSS wspieranego przez framework Bootstrap 5. Każda ze stron została sprawdzona
+            pod kątem zachowania w róznych przeglądarkach oraz różnych rozdzielczościach, a każde ze zdjęć posiada tekst alternatywny. Został również zaprojektowany
+            spójny system nawigacji umożlwiający łatwe i intuicyjne korzystanie z serwisu. Przedstawiony serwis spełnia wymagania dotyczące projeku.
+        </p>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-3 pt-2">
+        <h3 class="text-center fw-bold">Autor</h3>
+        <hr class="hr-yellow">
+        <h4>Norbert Piecka, Nr. indeksu: 329131</h4>
+    </div>
 </div>
 <footer class="bg-body-tertiary text-center text-lg-start">
     <div class="text-center p-3" id="footer">

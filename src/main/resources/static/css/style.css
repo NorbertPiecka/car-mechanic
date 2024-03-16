@@ -83,6 +83,12 @@
     display: none;
 }
 
+.summary-text {
+    width: 50%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 #project-container {
     justify-content: flex-end;
 }
