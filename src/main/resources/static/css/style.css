@@ -81,13 +81,17 @@
 #footer {
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.05);
+    height: 3rem;
 }
 
+.content-wrap {
+    padding-bottom: 3rem;
+    min-height: 90vh;
+}
 hr.solid {
     border-top: 3px solid #bbb;
     width: 90%;
 }
-
 .hr-yellow {
     border-top: 5px solid #ffc107;
     width: 30%;

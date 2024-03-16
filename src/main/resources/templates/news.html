@@ -35,7 +35,7 @@
         </ul>
     </div>
 </nav>
-<div class="d-flex flex-column justify-content-center align-items-center m-3 p-2">
+<div class="d-flex flex-column justify-content-center align-items-center m-3 p-2 content-wrap">
     <h3 class="text-center fw-bold" th:text="${news.name}"></h3>
     <p th:text="${news.date}"></p>
     <img class="news-image rounded" th:src="@{/news_image/} + ${news.photo}" th:alt="${news.photoAlt}">
