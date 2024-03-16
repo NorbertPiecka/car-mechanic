@@ -48,7 +48,7 @@
         <tbody>
             <td th:text="${car.name}">Author</td>
             <td th:text="${car.model.brand.name}">Author</td>
-            <td><img th:src="@{/car/} + ${car.photo}" th:alt="${car.photoAlt}" width="300" height="200"></td>
+            <td><img th:src="@{/car_image/} + ${car.photo}" th:alt="${car.photoAlt}" width="300" height="200"></td>
         </tr>
         </tbody>
     </table>

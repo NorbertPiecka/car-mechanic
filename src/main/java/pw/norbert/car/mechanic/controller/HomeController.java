@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pw.norbert.car.mechanic.model.News;
 import pw.norbert.car.mechanic.repository.NewsRepository;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class HomeController {
@@ -18,7 +20,8 @@ public class HomeController {
     @RequestMapping("/")
     public String showHomePage(Model model) {
         List<News> news = (List<News>) newsRepository.findAll();
-        model.addAttribute("news", news);
+        List<News> topNews = news.stream().sorted((n1, n2)-> n2.getDate().compareTo(n1.getDate())).limit(3).toList();
+        model.addAttribute("news", topNews);
         return "home";
     }
 

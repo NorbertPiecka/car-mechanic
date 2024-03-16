@@ -12,6 +12,19 @@
     margin: 0;
 }
 
+.d-flex {
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 18rem;
+}
+
+.home-image {
+    max-width: 50%;
+    max-height: 50%;
+}
+
 #project-container {
     justify-content: flex-end;
 }
